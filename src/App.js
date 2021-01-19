@@ -3,6 +3,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar'
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
+//add to home screen prompt
+
 //imports of page contents
 import CollegeAdminHomePage from './components/pages/CollegeAdminHomePage';
 import CreateAdmin from './components/pages/CreateAdmin';

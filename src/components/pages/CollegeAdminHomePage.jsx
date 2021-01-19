@@ -3,7 +3,7 @@ import {Row,Col,Table}from 'reactstrap';
 
 const CollegeAdminHomePage = (props) => {
     const {admins}=props;
-    console.log(props);
+    // console.log(props);
     return(
         <div className="mt-6" >
             <Row>
