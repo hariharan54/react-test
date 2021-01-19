@@ -48,7 +48,7 @@ const RenderTableData=props=>{
                 <td>{UserName}</td>
                 <td>{Email}</td>
                 <td>{Phone}</td>
-                {/* <td>{Password}</td> */}
+                <td>{Password}</td>
             </tr>
     
         )   
