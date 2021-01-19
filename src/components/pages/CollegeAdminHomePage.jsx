@@ -1,19 +1,27 @@
-import React,{useState} from 'react';
+import React from 'react';
 import {Row,Col,Table}from 'reactstrap';
 import EditIcon from '@material-ui/icons/EditOutlined';
 import  TrashIcon from '@material-ui/icons/DeleteOutlineOutlined';
 
+
 const CollegeAdminHomePage = (props) => {
-    const {admins,deleteAdmins}=props;
-    //const [currentadmins,setcurrentadmins]=useState(props);
-    console.log(admins);
+    const {admins,deleteAdmins,updateAdmins}=props;
+    //console.log(admins);
     
     const deleterow=(props)=>{
     deleteAdmins(props);
 }
 
+const EditRow=(i)=>{
+    
+    var {Name,UserName,Email,Phone,Password}=admins[i];
+    Name=prompt("Enter name:",Name);
+    Email=prompt("Enter Email:",Email);
+    Phone=prompt("Enter Phone:",Phone);
+    updateAdmins(i,Name,UserName,Email,Phone,Password);
+}
 
-
+//inner table function
 const RenderTableData=props=>{
     const {admins}=props;
     var count=0;
@@ -29,8 +37,8 @@ const RenderTableData=props=>{
                 <td>{UserName}</td>
                 <td>{Email}</td>
                 <td>{Phone}</td>
-              <td> <EditIcon/></td>
-               <td><TrashIcon value={count.toString(10)} onClick={()=>deleterow(i)}/></td>
+              <td> <EditIcon onClick={()=>EditRow(i)}/></td>
+               <td><TrashIcon onClick={()=>deleterow(i)}/></td>
                 {/* <td>{Password}</td> */}
             </tr>
     
