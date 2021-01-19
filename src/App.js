@@ -17,6 +17,11 @@ function App() {
   {
     setAdmins([...admins,eachEntry]);
   }
+
+  const deleteAdmins=(index)=>{
+        admins.splice(index,1);//splice 
+        setAdmins([...admins]);//update state
+  }
   return(
   <>
   <Router>
@@ -24,12 +29,12 @@ function App() {
       <Switch>
         <Route path='/' exact>
           <div className="center"><h1>Admin Dashboard</h1></div>
-          <CollegeAdminHomePage admins={admins}/>
+          <CollegeAdminHomePage admins={admins} deleteAdmins={deleteAdmins}/> 
           </Route>
         <Route path='/CreateAdmin'>
           <CreateAdmin updateAdminsArray={updateAdminsArray}/>
           <div className="center"><h1>Values Entered</h1></div>
-          <CollegeAdminHomePage admins={admins}/> 
+          <CollegeAdminHomePage admins={admins} deleteAdmins={deleteAdmins}/> 
         </Route>
         <Route path='/CreateDepartments' component={CreateDepartments} />
         <Route path='/CollegeAdminLogin' component={CollegeAdminLogin} />
