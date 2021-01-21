@@ -12,7 +12,11 @@ import CreateDepartments from './components/pages/CreateDepartments';
 import CollegeAdminLogin from './components/pages/CollegeAdminLogin';
 
 function App() {
+  
   const [admins, setAdmins] = useState([]);
+  
+
+  //add entries to admins
   const updateAdminsArray=eachEntry=>
   {
     setAdmins([...admins,eachEntry]);
@@ -23,6 +27,7 @@ function App() {
         setAdmins([...admins]);//update state
   }
 
+  //update data in admins
   const updateAdmins=(index,name,username,email,phone,password)=>{
       admins[index]={Name:name,UserName:username,Email:email,Phone:phone,Password:password};
       setAdmins([...admins]);
@@ -36,12 +41,12 @@ function App() {
       <Switch>
         <Route path='/' exact>
           <div className="center"><h1>Admin Dashboard</h1></div>
-          <CollegeAdminHomePage admins={admins} deleteAdmins={deleteAdmins} updateAdmins={updateAdmins}/> 
+           <CollegeAdminHomePage admins={admins} deleteAdmins={deleteAdmins} updateAdmins={updateAdmins}/>
           </Route>
         <Route path='/CreateAdmin'>
           <CreateAdmin updateAdminsArray={updateAdminsArray}/>
           <div className="center"><h1>Values Entered</h1></div>
-          <CollegeAdminHomePage admins={admins} deleteAdmins={deleteAdmins} updateAdmins={updateAdmins}/> 
+              <CollegeAdminHomePage admins={admins} deleteAdmins={deleteAdmins} updateAdmins={updateAdmins}/> 
         </Route>
         <Route path='/CreateDepartments' component={CreateDepartments} />
         <Route path='/CollegeAdminLogin' component={CollegeAdminLogin} />

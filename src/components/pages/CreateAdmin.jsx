@@ -18,7 +18,7 @@ const CreateAdmin = (props) => {
         setEachEntry({...eachEntry,[e.target.name]:e.target.value});
     }
 
-    const SubmitPressed = e=>{
+    const SubmitPressed = (e)=>{
         updateAdminsArray(eachEntry);
     }
     return (
@@ -28,17 +28,17 @@ const CreateAdmin = (props) => {
                 <FormGroup>
                     
                     {/* <label for="Name">Name:</label> */}
-                    <TextField id="outlined-basic" label="Name" variant="outlined" name="Name" value={Name} onChange={handleInputChange}/>
+                    <TextField className="outlined-basic" label="Name" variant="outlined" name="Name" value={Name} onChange={handleInputChange}/>
                     
-                    <TextField id="outlined-basic" label="Username" variant="outlined" name="UserName" value={UserName} onChange={handleInputChange}/>
+                    <TextField className="outlined-basic" label="Username" variant="outlined" name="UserName" value={UserName} onChange={handleInputChange}/>
                     
-                    <TextField id="outlined-basic" label="Email address" variant="outlined" name="Email"value={Email} onChange={handleInputChange}/>
+                    <TextField className="outlined-basic" label="Email address" variant="outlined" name="Email"value={Email} onChange={handleInputChange}/>
                     
-                    <TextField id="outlined-basic" label="Phone number" variant="outlined" name="Phone"value={Phone} onChange={handleInputChange}/>
+                    <TextField className="outlined-basic" label="Phone number" variant="outlined" name="Phone"value={Phone} onChange={handleInputChange}/>
                     
-                    <TextField id="outlined-basic" label="Password" variant="outlined"  type="password" name="Password"value={Password} onChange={handleInputChange}/>
+                    <TextField className="outlined-basic" label="Password" variant="outlined"  type="password" name="Password"value={Password} onChange={handleInputChange}/>
                     
-                    <TextField id="outlined-basic" label="Confirm password" variant="outlined" type="password" name="ConfirmPassword"/>
+                    <TextField className="outlined-basic" label="Confirm password" variant="outlined" type="password" name="ConfirmPassword"/>
 
                 </FormGroup>
 
